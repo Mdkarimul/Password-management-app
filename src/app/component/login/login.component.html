@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+
+<div class="cont-main">
+
+  <div class="form-cont">
+  
+      <h3>Login form</h3>
+<form [formGroup]="LoginForm"  (submit)="adminLogin($event)">
+
+  <!-- EMAIL INPUT FIELDS -->
+
+  <div class="form-group">
+   <input type="text" name="email"  [class.input-warn]="Lemail?.errors?.['required'] && Lemail?.touched"  placeholder="Email" formControlName="email">
+   <span *ngIf="Lemail?.errors?.['required'] && Lemail?.touched ">This field is required !</span>
+   <span *ngIf="Lemail?.errors?.['email']  ">Enter a valid email !</span>
+   </div>
+
+      <!-- PASSWORD INPUT FIELD -->
+<div class="form-group">
+<input type="text"  [class.input-warn]="Lpassword?.errors?.['required'] && Lpassword?.touched" name="password"  placeholder="Password" formControlName="password">
+<span *ngIf="Lpassword?.errors?.['required'] && Lpassword?.touched ">This field is required !</span>
+<span *ngIf="Lpassword?.errors?.['minlength']">Atleast 6 characters are required !</span>  
+ <span *ngIf="Lpassword?.errors?.['maxlength']">Maximum 12 characters are required !</span>  
+</div>
+
+   <button class="login-submit-btn" type="submit">
+     <span *ngIf="!controlLoader">Submit</span>
+     <i class='bx bx-loader-alt bx-spin bx-rotate-270' *ngIf="controlLoader"></i>    
+   </button>
+   </form>
+
+   </div>
+   </div>

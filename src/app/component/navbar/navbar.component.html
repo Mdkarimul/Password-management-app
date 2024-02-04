@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+  <div style="flex: 1;cursor: pointer;" >
+    <a class="fs-5 navbar-brand" (click)="routeControllService.goToLogin('/')"
+      >Brainwave.io</a
+    >
+  </div>
+  <div>
+    <button
+      class="active btn"
+      (click)="routeControllService.goToLogin('/login')"
+    >
+      Login
+    </button>
+    <button
+      class="btn signup"
+      (click)="routeControllService.goToSignup('/signup')"
+    >
+      Signup
+    </button>
+  </div>
+</mat-toolbar>

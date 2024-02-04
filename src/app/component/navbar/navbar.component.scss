@@ -1,0 +1,23 @@
+.mat-toolbar{
+  display: flex;
+  padding:0px 30px;
+  align-items: center;
+  background-color: var(--bg-secondary);
+}
+
+
+.mat-toolbar button{
+  margin: 0px 12px;
+  padding: 10px 25px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+.mat-toolbar .active{
+  background-color: var(--bg-10);
+  color: var(--color-70)!important;
+}
+.mat-toolbar .signup{
+  color: var(--bg-70);
+  border: 1px solid var(--bg-70);
+}

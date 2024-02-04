@@ -1,0 +1,53 @@
+<app-navbar></app-navbar>
+<div class="cont-main">
+
+  <div class="form-cont">
+  
+      <h3>Signup form</h3>
+     
+      <form    [formGroup]="SignupForm" (submit)="adminSignup($event)">
+
+        <!-- FULL NAME INPUT FIELD -->
+        <div class="form-group">
+          <input type="text" name="full-name" [class.input-warn]="full_name?.errors?.['required'] && full_name?.touched" formControlName="full_name" placeholder="Full name">
+          <span *ngIf="full_name?.errors?.['required'] && full_name?.touched ">This field is required !</span>
+        </div>
+  
+     <!-- EMAIL INPUT FIELDS -->
+       <div class="form-group">
+      <input type="text" name="email"  [class.input-warn]="email?.errors?.['required'] && email?.touched"  placeholder="Email" formControlName="email">
+      <span *ngIf="email?.errors?.['required'] && email?.touched ">This field is required !</span>
+      <span *ngIf="email?.errors?.['email']  ">Enter a valid email !</span>
+      </div>
+
+      <!-- MOBILE INPUT FIELD -->
+      <div class="form-group">
+      <input type="text"  [class.input-warn]="mobile?.errors?.['required'] && mobile?.touched" name="mobile" placeholder="Mobile" formControlName="mobile">
+      <span *ngIf="mobile?.errors?.['required'] &&  mobile?.touched ">This field is required !</span>
+      <span *ngIf="(mobile?.errors?.['minlength'] || mobile?.errors?.['maxlength']) ">10 digit mobile no required !</span>
+
+    </div>
+
+    <!-- PASSWORD INPUT FIELD -->
+      <div class="form-group">
+      <input type="text"  [class.input-warn]="password?.errors?.['required'] && password?.touched" name="password" placeholder="Password" formControlName="password">
+  <span *ngIf="password?.errors?.['required'] && password?.touched ">This field is required !</span>
+  <span *ngIf="password?.errors?.['minlength']">Atleast 6 characters are required !</span>  
+  <span *ngIf="password?.errors?.['maxlength']">Maximum 12 characters are required !</span>  
+</div>
+      <button [disabled]="controlLoader" class="signup-submit-btn" type="submit">
+       
+        <span *ngIf="!controlLoader">Submit</span>
+        <i class='bx bx-loader-alt bx-spin bx-rotate-270' *ngIf="controlLoader"></i>
+        
+      </button>
+      </form>
+  
+
+    <div class="social-signup">
+      <i class='bx bxl-facebook'></i>
+      <i class='bx bxl-google'></i>
+      <i class='bx bxl-twitter'></i>
+    </div>
+  </div>
+</div>
