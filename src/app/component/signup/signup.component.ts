@@ -87,7 +87,9 @@ get password() { return this.SignupForm.get("password"); }
     this.auth.createAdmin(this.SignupForm.value); 
     this.formDir.resetForm();
     }else{
-      
+      setTimeout(()=>{
+      this.formDir.resetForm();
+      },5000)
       ValidateForm.validateAllFormFields(this.SignupForm);
       this.alert.showAlert("All fields are required !" ,"Failed");
 

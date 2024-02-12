@@ -6,6 +6,7 @@ import { Subject, Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { AlertService } from './alert.service';
 import { LoadingService } from './loading.service';
+import { HttpService } from './http.service';
 @Injectable({
   providedIn: 'root'
 })
@@ -17,7 +18,7 @@ export class AdminAuthService {
   
   public btnState  = new Subject<boolean>();
 
-  constructor(public alert:AlertService,public loader : LoadingService,private router:Router) {
+  constructor(public alert:AlertService,public loader : LoadingService,private router:Router,private http:HttpService) {
      
 
 
@@ -28,9 +29,17 @@ export class AdminAuthService {
 
   
 
-async createAdmin(adminData:Admin){
+async createAdmin(adminData:Admin[]){
 
-  console.log(adminData);
+ this.http.postAdmin(adminData).subscribe({
+  next: (data)=>{
+    console.log(data)
+  },
+  error:(error)=>{ 
+    this.alert.showAlert(error.message,"Error");
+   console.log(error);
+  }
+ });
 
   }
 
