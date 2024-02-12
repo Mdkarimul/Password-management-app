@@ -3,6 +3,10 @@ import { NavbarComponent } from '../navbar/navbar.component';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { FormBuilder, FormGroup, FormGroupDirective, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NgIf } from '@angular/common';
+import { AlertService } from '../../services/alert.service';
+import { AdminAuthService } from '../../services/admin-auth.service';
+import { LoadingService } from '../../services/loading.service';
+import ValidateForm from '../../helpers/validateForm';
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -14,9 +18,9 @@ export class LoginComponent {
 
   constructor(
     public fb:FormBuilder, 
-    // public auth:AdminAuthService,
-    // public alert: AlertService,
-    // public loader : LoadingService
+    public auth:AdminAuthService,
+    public alert: AlertService,
+    public loader : LoadingService
     ){
   
   }
@@ -65,30 +69,29 @@ this.LoginForm = this.fb.group({
 
 
 
-  // FORM VALIDATORS 
-  
+// FORM VALIDATORS  ================>
 get Lemail() { return this.LoginForm.get("email"); }
 get Lpassword() { return this.LoginForm.get("password"); }
 
 
 
 
-
+//admin login ============>
   adminLogin(event:Event){
     event.preventDefault(); 
 
-    // if(this.LoginForm.valid){
+    if(this.LoginForm.valid){
      
-    // this.auth.loginAdmin(this.LoginForm.value); 
-    // if(!this.controlLoader){
-    //   this.formDir.resetForm();
-    // }
-    // }else{
+    this.auth.loginAdmin(this.LoginForm.value); 
+    if(!this.controlLoader){
+      this.formDir.resetForm();
+    }
+    }else{
       
-    //   ValidateForm.validateAllFormFields(this.LoginForm);
-    //   this.alert.showAlert("All fields are required !" ,"Failed");
+      ValidateForm.validateAllFormFields(this.LoginForm);
+      this.alert.showAlert("All fields are required !" ,"Failed");
 
-    // }
+    }
   }
 
 
