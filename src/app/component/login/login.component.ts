@@ -81,11 +81,11 @@ get Lpassword() { return this.LoginForm.get("password"); }
     event.preventDefault(); 
 
     if(this.LoginForm.valid){
-     
-    this.auth.loginAdmin(this.LoginForm.value); 
-    if(!this.controlLoader){
-      this.formDir.resetForm();
-    }
+     console.log(this.LoginForm.value);
+     this.auth.loginAdmin(this.LoginForm.value);
+    // if(!this.controlLoader){
+    //   this.formDir.resetForm();
+    // }
     }else{
       
       ValidateForm.validateAllFormFields(this.LoginForm);

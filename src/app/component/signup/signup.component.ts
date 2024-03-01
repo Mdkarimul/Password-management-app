@@ -8,6 +8,7 @@ import ValidateForm from '../../helpers/validateForm';
 import { AdminAuthService } from '../../services/admin-auth.service';
 import { AlertService } from '../../services/alert.service';
 import { LoadingService } from '../../services/loading.service';
+import { HttpService } from '../../services/http.service';
 
 @Component({
   selector: 'app-signup',
@@ -23,7 +24,8 @@ export class SignupComponent {
     public fb:FormBuilder, 
      public auth:AdminAuthService,
     public alert: AlertService,
-     public loader : LoadingService
+     public loader : LoadingService,
+     public http : HttpService
     ){
   
   }
@@ -80,11 +82,9 @@ get password() { return this.SignupForm.get("password"); }
 
   // ADMIN SIGNUP HERE ===>>
   adminSignup(event:Event){
- 
     event.preventDefault(); 
     if(this.SignupForm.valid){
-     
-    this.auth.createAdmin(this.SignupForm.value); 
+     this.auth.createAdmin(this.SignupForm.value); 
     this.formDir.resetForm();
     }else{
       setTimeout(()=>{

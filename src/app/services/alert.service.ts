@@ -15,8 +15,10 @@ export class AlertService {
     if (type.toLowerCase() == "success")
     {
       this.toaster.success(message,type);
+    }else {
+      this.toaster.error(message, type);
     }
-    this.toaster.error(message, type);
+
  
   }
 
