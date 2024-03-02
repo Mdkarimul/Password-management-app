@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavbarComponent } from '../navbar/navbar.component';
+import { NavbarComponent } from '../../home/navbar/navbar.component';
 import { RouterLink, Routes ,Router, ActivatedRoute} from '@angular/router';
 import { RoutecontrollService } from '../../services/routecontroll.service';
 import { FormBuilder, FormGroup, FormGroupDirective, ReactiveFormsModule, Validators } from '@angular/forms';
