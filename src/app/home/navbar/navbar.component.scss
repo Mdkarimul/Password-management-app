@@ -1,23 +1,22 @@
-.mat-toolbar{
+nav {
   display: flex;
-  padding:0px 30px;
+  padding: 10px 30px;
   align-items: center;
   background-color: var(--bg-secondary);
 }
-
-
-.mat-toolbar button{
+nav button {
   margin: 0px 12px;
   padding: 10px 25px;
   border: none;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 16px;
+  border-radius: 50px;
 }
-.mat-toolbar .active{
+nav .active {
   background-color: var(--bg-10);
-  color: var(--color-70)!important;
+  color: var(--color-primary) !important;
 }
-.mat-toolbar .signup{
+nav .signup {
   color: var(--bg-70);
   border: 1px solid var(--bg-70);
 }

@@ -1,0 +1,20 @@
+
+    .container-fluid {
+        padding: 4rem 0px;
+        background-color: var(--bg-10);
+    }
+
+    .member{
+        width: 90%;
+        height: 500px;
+        border: 1px solid var(--bg-20);
+        margin: 50px auto;
+        padding: 20px 10px;
+    }
+    .member img {
+        width:80%;
+        height: 250px;
+        object-fit:fill;
+        display: block;
+        margin:20px auto;
+    }

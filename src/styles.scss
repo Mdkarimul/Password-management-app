@@ -30,9 +30,7 @@ $crud-theme: mat.define-light-theme((
 
 // GOOGLE FONT
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
@@ -41,16 +39,25 @@ $crud-theme: mat.define-light-theme((
 /* You can add global styles to this file, and also import other style files */
 
 
+:root {
+  --bg-70:#ffffff;
+  --bg-20:#cccbcb;
+  --bg-secondary:#5f16e6;
+  --bg-10:#191919;
 
+  --color-primary: #e2e0e0;
+  --color-secondary:#fff;
+ --color-warn:#af4040;
+}
 
 body { 
   margin: 0; 
-  font-family: 'Lato', sans-serif;
+  font-family: "Noto Sans", sans-serif;
   background-color: var(--bg-70);
  }
 
  *{
-  font-family: 'Lato', sans-serif;
+  font-family: "Noto Sans", sans-serif;
   padding:0px;
   margin: 0px;
  }
@@ -67,18 +74,26 @@ body {
   font-size: 15px;
  }
 
+ .heading {
+  font-family: "Noto Sans", sans-serif;
+  font-weight:700;
+  font-size:3rem;
+  color: var(--color-secondary);
+ }
+ .description {
+  font-family: "Noto Sans", sans-serif;
+  font-weight:normal;
+  font-size: 1rem;
+  color: var(--color-primary);
+ }
 
 
-:root {
-  --bg-70:#ffffff;
-  --bg-20:#cccbcb;
-  --bg-secondary:#5f16e6;
-  --bg-10:#191919;
 
-  --color-primary: #191919;
- --color-warn:#af4040;
+ 
 
-}
+
+
+
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';

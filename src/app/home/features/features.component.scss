@@ -1,0 +1,42 @@
+.feature-one {
+    background-color: var(--bg-10);
+
+}
+.benefit {
+    width:100%;
+    margin:5rem auto;
+    height: auto;
+    border: 1px solid var(--bg-20);
+    padding: 30px;
+}
+
+.feature-two {
+    padding: 50px 0px;
+    background-color: var(--bg-10);
+}
+
+.feature-three {
+    padding: 50px 0px;
+    background-color: var(--bg-10);
+}
+
+.list-one {
+    width: 60px;
+    height: 60px;
+    border:1px solid var(--bg-20);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.list-line {
+   width:1px;
+    height:100px;
+    background-color: var(--bg-20);
+}
+.list-one span {
+    font-size:25px;
+    color:var(--bg-20);
+    text-align: center;
+    font-weight:700;
+}

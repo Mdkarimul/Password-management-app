@@ -1,0 +1,31 @@
+.container-fluid {
+    background-color: var(--bg-10);
+    border: 2px solid red;
+    padding: 100px 0px;
+}
+
+.btn-cont {
+    width: fit-content;
+    height:100px;
+    border:2px solid red;
+}
+.btn-cont button {
+    margin: 30px;
+}
+.basic,.pro,.enterprice {
+    width: 90%;
+    margin:50px auto;
+    height: auto;
+    border: 1px solid var(--bg-20);
+    border-radius: 5px;
+    padding: 30px;
+   
+}
+.price-btn {
+    width: 90%;
+    height: auto;
+    padding: 20px 15px;
+    background-color: var(--bg-20);
+    margin: 10px auto;
+    border-radius: 30px;
+}

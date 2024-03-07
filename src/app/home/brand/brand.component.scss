@@ -1,0 +1,34 @@
+.animate-brand {
+    width:auto;
+    height: 140px;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap:8rem;
+    justify-items: center;
+    align-items: center;
+    position: absolute;
+    animation: slidebrand 25s  0s infinite linear backwards;
+
+}
+
+@keyframes slidebrand {
+    0%   { left:0px; top:0px;}
+    // 25%  {background-color:yellow; left:200px; top:0px;}
+    // 50%  {background-color:blue; left:200px; top:200px;}
+    // 75%  {background-color:green; left:0px; top:200px;}
+    100% {left:-1400px; top:0px;}
+  }
+
+.animate-brand img {
+    justify-self: center;
+    margin:0px 15px;
+    width: 200px;
+}
+ 
+.brand-cont{
+    position: relative;
+    background-color: var(--bg-10);
+    width: 100%;
+    height: 140px;
+    overflow: hidden;
+}
