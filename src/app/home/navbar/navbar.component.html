@@ -1,21 +1,11 @@
-<nav color="primary">
+<nav>
   <div style="flex: 1; cursor: pointer">
     <a class="fs-5 navbar-brand" (click)="routeControllService.goToLogin('/')"
-      ><img src="../../../assets/images/logo.svg" width="130" alt=""
+      ><img src="../../../assets/images/logo.svg" class="img-fluid" width="150px" alt=""
     /></a>
   </div>
-  <div>
-    <button
-      class="active btn"
-      (click)="routeControllService.goToLogin('/login')"
-    >
-      Login
-    </button>
-    <button
-      class="btn signup"
-      (click)="routeControllService.goToSignup('/signup')"
-    >
-      Signup
-    </button>
+  <div style="display: grid; grid-template-columns: 1fr 1fr;">
+<button class="active btn" (click)="routeControllService.goToLogin('/login')">Login</button>
+<button class="btn signup" (click)="routeControllService.goToSignup('/signup')">Signup</button>
   </div>
 </nav>
